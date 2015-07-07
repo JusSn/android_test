@@ -205,7 +205,7 @@ public class MainActivity extends Activity {
                 String text = (String) msg.obj;
                 if (msg.what == 0) {
                     if (errors.contains(text)) {
-                        errors.remove();
+                        errors.remove(text);
                     }
                     errors.add(text);
                 }
