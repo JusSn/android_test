@@ -9,5 +9,11 @@
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtDisplay"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnBack"/>
 
 </RelativeLayout>

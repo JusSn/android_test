@@ -1,6 +1,7 @@
 package com.example.justin.test2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -14,9 +15,11 @@ import android.widget.Button;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -71,6 +74,8 @@ public class MainActivity extends Activity {
         rem3 = (Button) findViewById(R.id.btnRem3);
         rem4 = (Button) findViewById(R.id.btnRem4);
         rem5 = (Button) findViewById(R.id.btnRem5);
+
+        next = (Button) findViewById(R.id.btnNext);
 
         errors = new ArrayDeque<>();
         updatedErrors = new ArrayDeque<>(errors);
@@ -161,6 +166,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(MainActivity.this,TestActivity.class);
+                a.putExtra("test",test);
+                startActivity(a);
+            }
+        });
 
         txtTest.setOnClickListener(new View.OnClickListener() {
             @Override

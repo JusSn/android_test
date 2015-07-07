@@ -1,9 +1,11 @@
 package com.example.justin.test2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,7 +20,21 @@ public class TestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        back = (Button) findViewById(R.id.btnBack);
+        display = (TextView) findViewById(R.id.txtDisplay);
 
+        Intent a = getIntent();
+        Bundle b = a.getExtras();
+        String stringArray[] = b.getStringArray("test");
+        display.setText(stringArray[0]);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent j = new Intent(TestActivity.this, MainActivity.class);
+                startActivity(j);
+            }
+        });
     }
 
     @Override
